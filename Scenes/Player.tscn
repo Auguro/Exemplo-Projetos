@@ -1,0 +1,119 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://script/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprite/Player/tile062.png" type="Texture" id=2]
+[ext_resource path="res://Sprite/Player/tile035.png" type="Texture" id=3]
+[ext_resource path="res://Sprite/Player/tile034.png" type="Texture" id=4]
+[ext_resource path="res://Sprite/Player/tile033.png" type="Texture" id=5]
+[ext_resource path="res://Sprite/Player/tile032.png" type="Texture" id=6]
+[ext_resource path="res://Sprite/Player/tile031.png" type="Texture" id=7]
+[ext_resource path="res://Sprite/Player/tile030.png" type="Texture" id=8]
+[ext_resource path="res://Sprite/Player/tile029.png" type="Texture" id=9]
+[ext_resource path="res://Sprite/Player/tile028.png" type="Texture" id=10]
+[ext_resource path="res://Sprite/Player/tile027.png" type="Texture" id=11]
+[ext_resource path="res://Sprite/Player/tile017(1).png" type="Texture" id=12]
+[ext_resource path="res://Sprite/Player/tile043.png" type="Texture" id=13]
+[ext_resource path="res://Sprite/Player/tile042.png" type="Texture" id=14]
+[ext_resource path="res://Sprite/Player/tile041.png" type="Texture" id=15]
+[ext_resource path="res://Sprite/Player/tile040.png" type="Texture" id=16]
+[ext_resource path="res://Sprite/Player/tile039.png" type="Texture" id=17]
+[ext_resource path="res://Sprite/Player/tile038.png" type="Texture" id=18]
+[ext_resource path="res://Sprite/Player/tile037.png" type="Texture" id=19]
+[ext_resource path="res://Sprite/Player/tile036.png" type="Texture" id=20]
+[ext_resource path="res://Sprite/Player/tile060.png" type="Texture" id=21]
+[ext_resource path="res://Sprite/Player/tile059.png" type="Texture" id=22]
+[ext_resource path="res://Sprite/Player/tile058.png" type="Texture" id=23]
+[ext_resource path="res://Sprite/Player/tile057.png" type="Texture" id=24]
+[ext_resource path="res://Sprite/Player/tile056.png" type="Texture" id=25]
+[ext_resource path="res://Sprite/Player/tile055.png" type="Texture" id=26]
+[ext_resource path="res://Sprite/Player/tile054.png" type="Texture" id=27]
+[ext_resource path="res://Sprite/Player/tile016(1).png" type="Texture" id=28]
+[ext_resource path="res://Sprite/Player/tile015(1).png" type="Texture" id=29]
+[ext_resource path="res://Sprite/Player/tile014(1).png" type="Texture" id=30]
+[ext_resource path="res://Sprite/Player/tile013(1).png" type="Texture" id=31]
+[ext_resource path="res://Sprite/Player/tile012(1).png" type="Texture" id=32]
+[ext_resource path="res://Sprite/Player/tile011(1).png" type="Texture" id=33]
+[ext_resource path="res://Sprite/Player/tile010(1).png" type="Texture" id=34]
+[ext_resource path="res://Sprite/Player/tile009(1).png" type="Texture" id=35]
+[ext_resource path="res://Sprite/Player/tile044.png" type="Texture" id=36]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.9116, 7.14163 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Direita",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "WalkDireita",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "WalkEsquerda",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "WalkDown",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "WalkUp",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": true,
+"name": "Esquerda",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+process_mode = 0
+limit_left = 0
+limit_top = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D"]
+margin_left = -63.3595
+margin_top = 33.8496
+margin_right = 57.6405
+margin_bottom = 73.8496
+
+[node name="ProvasCompletas" type="Label" parent="Camera2D/VBoxContainer"]
+margin_right = 121.0
+margin_bottom = 14.0
+text = "Provas completas: "
+
+[node name="Falhas" type="Label" parent="Camera2D/VBoxContainer"]
+margin_top = 18.0
+margin_right = 121.0
+margin_bottom = 32.0
+text = "Falhas: "
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 25 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "WalkUp"

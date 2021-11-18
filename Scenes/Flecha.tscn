@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/Flecha/arrow.png" type="Texture" id=1]
+[ext_resource path="res://Script/Flecha.gd" type="Script" id=2]
+
+[node name="Flecha" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
