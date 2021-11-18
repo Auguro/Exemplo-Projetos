@@ -1,0 +1,2 @@
+# Exemplo-Projetos
+Esse é minha parte de um projeto que eu participei, a ideia toda é um jogo em GDScript que resumidamente toda as materias escolares simbolizam um tipo de mecanica de jogos diferente. Nessa parte apresento apenas algumas e por ser mais difícil de se entender por se tratar de um projeto feito em uma Engine foram separados juntos dois diagramas para facilitar o entendimento do projeto.
